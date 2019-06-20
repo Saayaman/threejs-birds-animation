@@ -151,12 +151,12 @@
 				float preyRadiusSq = preyRadius * preyRadius;
 
 
-				// move birds away from predator
+				// move birds to from predator
 				if ( dist < preyRadius ) {
 
 					f = ( distSquared / preyRadiusSq - 1.0 ) * delta * 100.;
-					velocity += normalize( dir ) * f;
-					limit += 5.0;
+					velocity -= normalize( dir ) * f;
+					limit -= 5.0;
 				}
 
 
